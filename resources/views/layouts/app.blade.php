@@ -7,19 +7,16 @@
     <title>@yield('title', 'My Laravel App')</title>
 
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="resources/css/app.css"> --}}
     @vite(['resources/css/app.css'])
-    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Optional for TailwindCSS -->
+    @vite(['resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-white text-primaryDark">
     <!-- Header -->
     @include('components.header')
 
     <!-- Main Content -->
-    <div class="container mx-auto mt-5 px-4">
+    <div>
         @yield('content')
     </div>
 

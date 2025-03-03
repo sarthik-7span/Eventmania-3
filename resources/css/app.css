@@ -5,9 +5,68 @@
 @source "../**/*.blade.php";
 @source "../**/*.js";
 @source "../**/*.vue";
-@config "../../tailwind.config.js";
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-roboto: "Roboto", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+
+    --font-size-xxs: 10px;
+
+    --height-5-5: 22px;
+    --width-5-5: 22px;
+    --spacing-480: 480px;
+
+    --color-rainbowgray: #171C21;
+    --color-rainbowgrayDark: #0F1419;
+    --color-rainbow_text_gray: #cddce8;
+    --color-rainbow_darkblue: #006398;
+    --color-rainbow_royalblue: #003351;
+    --color-rainbow_blue: #93CCFF;
+    --color-lightgray: #f4f4f4;
+    --color-lightgreen: #00A200;
+    --color-lightred: #EA334B;
+    --color-watergreen: #57BEB5;
+    --color-danger: #900B09;
+    --color-dangerLight: #F4776A;
+    --color-danger200: #C00F0C;
+    --color-danger300: #FEE9E7;
+    --color-gray1: #111928;
+    --color-gray100: #d9d9d9;
+    --color-gray150: #F7F8F9;
+    --color-gray200: #757575;
+    --color-gray250: #64748B;
+    --color-gray300: #767680;
+    --color-gray350: #444444;
+    --color-gray400: #e3e3e3;
+    --color-gray450: #E5E7EB;
+    --color-gray500: #b3b3b3;
+    --color-gray600: #767676;
+    --color-gray700: #cfc4c5;
+    --color-gray800: #5e5e5e;
+    --color-gray900: #F5F5F5;
+    --color-blue200: #2d68f8;
+    --color-blue-link: #1D4ED8;
+    --color-primaryLight: #2C2C2C;
+    --color-primaryDark: #1e1e1e;
+
+    --color-primary-50: #F2F2F2;
+    --color-primary-100: #5d5f5f;
+    --color-primary-300: #808080;
+    --color-primary-400: #4A4A4A;
+    --color-primary-500: #d0021b;
+    --color-primary-600: #000000;
+    --color-primary-700: #333333;
+    --color-primary-800: #1A1A1A;
+    --color-primary-900: #0D0D0D;
+
+    --color-secondary-400: #4A4A4A;
+    --color-secondary-500: #009f10;
+    --color-secondary-600: #979797;
+    --color-secondary-700: #333333;
+    --color-secondary-800: #131313;
+    --color-secondary-900: #4C4546;
+
+    --grid-template-columns-5: repeat(5, minmax(0, 1fr));
 }

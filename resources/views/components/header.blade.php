@@ -1,12 +1,12 @@
-<div class="bg-primary-600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primaryDark">
+    <div class="max-w-7xl mx-auto px-4">
         <header x-data="{ show: false, showDP: false, location: window.location.pathname }" class="lg:flex justify-between items-center z-50 relativ py-3 lg:py-4 ">
             <div class="flex justify-between items-center w-full lg:w-auto lg:gap-8">
                 <a wire:navigate href="#">
                     <img src="{{ asset('img/logo-white-red.svg') }}" alt="Event Mania"
                         class="w-full object-contain h-[40px] max-w-[167px] ">
                 </a>
-                <ul class="hidden lg:flex lg:items-center lg:gap-8">
+                <ul class="hidden lg:flex lg:items-center lg:gap-6">
                     <li>
                         <a wire:navigate href="#"
                             class="relative cursor-pointer px-1 group font-roboto leading-6 text-base text-white border-transparent whitespace-nowrap hover:font-medium">@lang('events')
@@ -44,7 +44,7 @@
                                     @click="deskOpen = true; open = true; $nextTick(() => $refs.searchPopupFocus.focus())"
                                     x-bind:class="{ 'rounded-b-0 rounded-t-md': deskOpen, 'rounded-md': !deskOpen }"
                                     wire:keydown.enter="enterEventSearchData" id="search" name="search"
-                                    class="bg-zinc-800 font-roboto placeholder:text-white text-zinc-50 leading-6 block w-auto xl:!w-96 p-2.5 pl-10 outline-none !rounded-3xl shadow border border-primary-800 focus:ring-0 focus:border-gray-500"
+                                    class="bg-gray350 font-roboto placeholder:text-white text-zinc-50 leading-6 block w-auto xl:!w-96 p-2.5 pl-10 outline-none !rounded-3xl shadow border border-primary-800 focus:ring-0 focus:border-gray-500"
                                     placeholder="{{ __('eventSearchPlaceHolder') }}" type="search">
                             </div>
                             <div class="absolute top-full left-0 right-0 font-roboto overflow-hidden bg-black/90 backdrop-blur-lg rounded-xl hidden md:block z-50 shadow-2xl border border-gray-800 transition-all duration-300"
@@ -291,61 +291,6 @@
                         </div>
                     </div>
                 @endif
-            </div>
-            <div class="lg:hidden relative">
-                <div>
-                    <div x-data="{ open: false, deskOpen: false }" class="mt-4" x-cloak>
-                        <div class="relative">
-                            <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
-                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20" aria-hidden="true">
-                                    <path fill="white" fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <input wire:model.live.debounce.300ms="search" @input="deskOpen = true"
-                                autocomplete="off" @click="deskOpen = true; open = true" x-init="() => $watch('open', value => {
-                                    if (value) {
-                                        $nextTick(() => {
-                                            setTimeout(() => $refs.searchPopupFocus.focus(), 200);
-                                        });
-                                    }
-                                })"
-                                x-bind:class="{ 'rounded-b-0 rounded-t-md': deskOpen, 'rounded-md': !deskOpen }"
-                                wire:keydown.enter="enterEventSearchData" id="search" name="search"
-                                class="bg-zinc-800 placeholder:font-normal placeholder:text-zinc-300 text-zinc-50 leading-6 w-full block lg:max-w-sm p-2.5 pl-10 outline-none !rounded-3xl shadow border border-primary-800 focus:ring-0 focus:border-gray-500"
-                                placeholder="{{ __('eventSearchPlaceHolder') }}" type="search">
-                        </div>
-                        <div class="absolute top-full left-0 right-0 font-roboto overflow-hidden bg-black/90 backdrop-blur-lg rounded-xl hidden md:block z-50 shadow-2xl border border-gray-800 transition-all duration-300"
-                            x-show="deskOpen" @click.away="deskOpen = false">
-                            <h3
-                                class="text-lg bg-primary-600 px-4 py-2 font-semibold text-white border-b border-gray-900">
-                                {{ __('featuredNearYou') }}
-                            </h3>
-                            <ul class="divide-y divide-gray-800 max-h-60 overflow-y-auto">
-                                <li>
-                                    <a wire:navigate href="#"
-                                        class="group flex items-center gap-4 px-4 py-2 text-gray-800 hover:bg-gradient-to-r from-black/70  via-transparent to-transparent transition-all duration-300 ease-in-out">
-                                        <div class="flex flex-col group-hover:translate-x-2 duration-300">
-                                            <span class="text-sm text-gray-500">
-                                                Dummy Date
-                                            </span>
-                                            <span class="font-medium text-lg text-white transition-all">
-                                                Dummy Title
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        @php
-                            $placeholder = __('searchEvent');
-                            $title = __('featuredNearYou');
-                        @endphp
-                        <x-search2 />
-                    </div>
-                </div>
             </div>
         </header>
     </div>

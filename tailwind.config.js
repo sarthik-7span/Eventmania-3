@@ -4,6 +4,19 @@ export default {
     content: ["*"],
     theme: {
         extend: {
+            fontSize: {
+                xxs: "10px"
+            },
+            height: {
+                '5.5': '22px',
+            },
+            width: {
+                '5.5': '22px',
+            },
+            fontFamily: {
+                roboto: ["Roboto", "sans-serif"],
+                montserrat: ["Montserrat", "sans-serif"]
+            },
             colors: {
                 ...colors,
                 rainbowgray: "#171C21",
@@ -18,6 +31,7 @@ export default {
                 watergreen: "#57BEB5",
                 danger: "#900B09",
                 danger200: "#C00F0C",
+                danger300: "#FEE9E7",
                 gray1: "#111928",
                 gray100: "#d9d9d9",
                 gray150: "#F7F8F9",
@@ -52,6 +66,9 @@ export default {
                     800: "#131313",
                     900: "#4C4546"
                 },
+            },
+            gridTemplateColumns: {
+                5: "repeat(5, minmax(0, 1fr))",
             },
         },
     },
