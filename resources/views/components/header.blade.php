@@ -1,4 +1,4 @@
-<div class="bg-primaryDark">
+<div class="bg-primaryDark border-b border-gray350">
     <div class="max-w-7xl mx-auto px-4">
         <header x-data="{ show: false, showDP: false, location: window.location.pathname }" class="lg:flex justify-between items-center z-50 relativ py-3 lg:py-4 ">
             <div class="flex justify-between items-center w-full lg:w-auto lg:gap-8">
@@ -47,8 +47,8 @@
                                     class="bg-gray350 font-roboto placeholder:text-white text-zinc-50 leading-6 block w-auto xl:!w-96 p-2.5 pl-10 outline-none !rounded-3xl shadow border border-primary-800 focus:ring-0 focus:border-gray-500"
                                     placeholder="{{ __('eventSearchPlaceHolder') }}" type="search">
                             </div>
-                            <div class="absolute top-full left-0 right-0 font-roboto overflow-hidden bg-black/90 backdrop-blur-lg rounded-xl hidden md:block z-50 shadow-2xl border border-gray-800 transition-all duration-300"
-                                x-show="deskOpen" @click.away="deskOpen = false">
+                            <div class="absolute top-full left-0 right-0 font-roboto overflow-hidden bg-black/90 backdrop-blur-lg rounded-xl hidden md:block z-50 shadow-2xl transition-all duration-300"
+                                x-show="deskOpen" @click.away="deskOpen = false" style="display: none">
                                 <h3
                                     class="text-lg bg-primary-600 px-4 py-2 font-semibold text-white border-b border-gray-900">
                                     {{ __('featuredNearYou') }}
@@ -76,15 +76,15 @@
                     <div class="flex sm:hidden">
                         @if (true)
                             <div
-                                class="font-roboto leading-6 text-base  text-primary-700 font-semibold flex items-center justify-center bg-[#DFDEE0] rounded-full px-[6px] py-[6px] h-[42px] w-[42px] mr-4 sm:block hidden">
+                                class="font-roboto leading-6 text-base  text-primary-700 font-semibold flex items-center justify-center bg-[#DFDEE0] rounded-full p-1.5 h-10 w-10 mr-4 sm:block hidden">
                                 <div class="relative">
                                     <div>
                                         <button type="button" @click="showDP = !showDP"
                                             :aria-expanded="showDP ? 'true' : 'false'" :class="{ 'active': showDP }"
                                             class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500"
                                             id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                            <img class="inline-block h-9 w-9 rounded-full" src="dummy-avatar-url"
-                                                alt="Dummy User">
+                                            <img class="inline-block h-9 w-9 rounded-full"
+                                                src="https://picsum.photos/id/237/200/200" alt="Dummy User">
                                         </button>
                                     </div>
                                     <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
@@ -190,7 +190,8 @@
                                                 <div class="flex items-center">
                                                     <div>
                                                         <img class="inline-block h-9 w-9 rounded-full"
-                                                            src="dummy-avatar-url" alt="Dummy User">
+                                                            src="https://picsum.photos/id/237/200/200"
+                                                            alt="Dummy User">
                                                     </div>
                                                     <div class="ml-3">
                                                         <p
@@ -235,28 +236,30 @@
                 </ul>
             </div>
             <div class="lg:flex hidden lg:items-center lg:justify-between gap-6">
-                <a wire:navigate href="#"
-                    class="relative cursor-pointer px-1 group font-roboto leading-6 text-base text-white border-transparent whitespace-nowrap hover:font-medium">
-                    @lang('support')
-                    <span
-                        class="absolute -bottom-1 left-0 h-0.5 bg-primary-500 transition-all duration-300 w-0 group-hover:w-full"></span>
-                </a>
+                <div class="space-x-3">
+                    <button
+                        class="bg-neutral px-4 py-1 rounded-lg text-white text-base border border-gray750 hover:bg-primaryDark">
+                        Sign in</button>
+                    <button
+                        class="bg-gray900 px-4 py-1 rounded-lg text-primaryDark text-base border border-gray750 hover:bg-white">Register</button>
+                </div>
                 @if (true)
                     <div
-                        class="font-chivo hidden leading-6 text-base text-primary-700 font-semibold lg:flex items-center justify-center bg-[#DFDEE0] bg-transparent lg:rounded-full px-[6px] py-[6px] h-[42px] w-[42px] mr-4">
+                        class="hidden leading-6 text-base text-primary-700 font-semibold lg:flex items-center justify-center bg-transparent lg:rounded-full p-1.5 h-10 w-10">
                         <div class="relative">
                             <div>
                                 <button type="button" @click="showDP = !showDP"
                                     :aria-expanded="showDP ? 'true' : 'false'" :class="{ 'active': showDP }"
-                                    class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500"
+                                    class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500 h-9 w-9"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                    <img class="inline-block h-9 w-9 rounded-full" src="dummy-avatar-url"
-                                        alt="Dummy User">
+                                    <img class="inline-block w-full h-full rounded-full"
+                                        src="https://picsum.photos/id/237/200/200" alt="Dummy User">
                                 </button>
                             </div>
                             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-primary-800 ring-1 ring-gray-800 ring-opacity-5 focus:outline-none z-10"
                                 @click.away="showDP = false" role="menu" aria-orientation="vertical"
-                                aria-labelledby="user-menu-button" tabindex="-1" x-show="showDP" x-cloak>
+                                aria-labelledby="user-menu-button" tabindex="-1" x-show="showDP" x-cloak
+                                style="display: none">
                                 <a href="#"
                                     class="block px-4 py-2 text-base text-white font-normal font-roboto hover:bg-primary-700"
                                     role="menuitem" tabindex="-1" id="user-menu-item-0">

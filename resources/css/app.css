@@ -11,6 +11,9 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-roboto: "Roboto", sans-serif;
     --font-montserrat: "Montserrat", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+    --breakpoint-xs: 30rem;
 
     --font-size-xxs: 10px;
 
@@ -42,15 +45,23 @@
     --color-gray400: #e3e3e3;
     --color-gray450: #E5E7EB;
     --color-gray500: #b3b3b3;
+    --color-gray550: #FAFAFA;
     --color-gray600: #767676;
+    --color-gray650: #737373;
     --color-gray700: #cfc4c5;
+    --color-gray750: #949494;
     --color-gray800: #5e5e5e;
     --color-gray900: #F5F5F5;
     --color-blue200: #2d68f8;
+    --color-blue300: #2A2E36;
     --color-blue-link: #1D4ED8;
+    --color-blue-bright: #11CCFF;
+    --color-neutral: #303030;
+    --color-neutral100: #5A5A5A;
+
     --color-primaryLight: #2C2C2C;
     --color-primaryDark: #1e1e1e;
-
+    --color-blur: #0F0F0FBF;
     --color-primary-50: #F2F2F2;
     --color-primary-100: #5d5f5f;
     --color-primary-300: #808080;
@@ -69,4 +80,38 @@
     --color-secondary-900: #4C4546;
 
     --grid-template-columns-5: repeat(5, minmax(0, 1fr));
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #999ea9, #646c78);
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #636a72, #777e88);
+}
+
+body {
+    font-family: var(--font-inter);
+}
+
+.ticket-table-row+.ticket-table-row {
+    border-top: 1px solid var(--color-gray100);
+}
+
+button,
+a {
+    cursor: pointer;
 }
