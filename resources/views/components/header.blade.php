@@ -235,10 +235,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="lg:flex hidden lg:items-center lg:justify-between gap-6">
-                <div class="space-x-3">
+            <div class="lg:flex hidden lg:items-center lg:justify-between gap-3">
+                <div class="flex gap-3">
                     <button
-                        class="bg-neutral px-4 py-1 rounded-lg text-white text-base border border-gray750 hover:bg-primaryDark">
+                        class="bg-neutral whitespace-nowrap px-4 py-1 rounded-lg text-white text-base border border-gray750 hover:bg-primaryDark">
                         Sign in</button>
                     <button
                         class="bg-gray900 px-4 py-1 rounded-lg text-primaryDark text-base border border-gray750 hover:bg-white">Register</button>
@@ -250,10 +250,15 @@
                             <div>
                                 <button type="button" @click="showDP = !showDP"
                                     :aria-expanded="showDP ? 'true' : 'false'" :class="{ 'active': showDP }"
-                                    class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500 h-9 w-9"
+                                    class="rounded-full flex items-center justify-center text-sm focus:outline-none h-9 w-9 hover:bg-black border border-transparent hover:border-primaryLight"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                    <img class="inline-block w-full h-full rounded-full"
-                                        src="https://picsum.photos/id/237/200/200" alt="Dummy User">
+                                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.6666 16.5V14.8333C14.6666 13.9493 14.3154 13.1014 13.6903 12.4763C13.0652 11.8512 12.2173 11.5 11.3333 11.5H4.66659C3.78253 11.5 2.93468 11.8512 2.30956 12.4763C1.68444 13.1014 1.33325 13.9493 1.33325 14.8333V16.5M11.3333 4.83333C11.3333 6.67428 9.84087 8.16667 7.99992 8.16667C6.15897 8.16667 4.66659 6.67428 4.66659 4.83333C4.66659 2.99238 6.15897 1.5 7.99992 1.5C9.84087 1.5 11.3333 2.99238 11.3333 4.83333Z"
+                                            stroke="white" stroke-width="1.6" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
                             </div>
                             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-primary-800 ring-1 ring-gray-800 ring-opacity-5 focus:outline-none z-10"

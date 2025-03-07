@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <h2
-                        class="text-xl leading-6 font-bold text-primaryDark md:text-white md:text-2xl lg:text-3xl md:font-semibold md:mt-2 md:mb-6">
+                        class="text-xl leading-6 md:leading-normal font-bold text-primaryDark md:text-white md:text-2xl lg:text-3xl md:font-semibold md:mt-2 md:mb-6">
                         Event Name No Maximum Height to Height of Name
                     </h2>
                     <div class="text-gray-600 mt-1 space-y-1 md:hidden">
@@ -190,7 +190,7 @@
         </div>
         <div x-show="showLineup" x-cloak
             class="fixed z-50  inset-0 bg-black/20 bg-opacity-50 flex items-center justify-center" style="display: none;">
-            <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/3 pt-8 relative">
+            <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 pt-8 relative">
                 <button @click="showLineup = false"
                     class="absolute text-3xl font-normal top-3 right-4 text-primaryDark hover:text-black">
                     &times;

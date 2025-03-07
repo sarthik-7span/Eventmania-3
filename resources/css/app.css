@@ -107,11 +107,16 @@ body {
     font-family: var(--font-inter);
 }
 
-.ticket-table-row+.ticket-table-row {
-    border-top: 1px solid var(--color-gray100);
-}
-
 button,
 a {
     cursor: pointer;
+}
+
+.partners-slider .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.partners-slider .slick-slide {
+    margin-right: 48px;
 }
