@@ -73,7 +73,7 @@
                             class="cursor-pointer border text-gray900 bg-danger border-dangerLight hover:bg-danger200 md:max-w-52 w-full p-2 md:p-2.5 rounded-lg font-bold text-base lg:text-xl md:text-danger300">
                             Find Tickets
                         </button>
-                        <div class="hidden md:block">
+                        <div class="hidden cursor-pointer md:block">
                             <img src="{{ asset('img/share.svg') }}" alt="share icon" class="w-5 h-5 lg:w-8 lg:h-8">
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex-1 space-y-4 md:p-5 border-t border-gray-300 pt-8 md:pt-0 md:border-t-0">
+                <div class="flex-1 space-y-4 md:p-5 border-t border-gray-300 pt-8 md:border-t-0">
                     <h3 class="text-base md:text-xl font-semibold uppercase">Location</h3>
                     <div class="space-y-1 md:space-y-2">
                         <p class="text-base font-semibold">Venue Name</p>
@@ -175,9 +175,15 @@
                         <a href="tel:+11231231234">(123) 123-1234</a>
                     </div>
                     <div class="flex gap-4 w-full">
-                        <img class="w-5 h-5" src="{{ asset('img/facebook.svg') }}" alt="facebook icon">
-                        <img class="w-5 h-5" src="{{ asset('img/twitter.svg') }}" alt="twitter icon">
-                        <img class="w-5 h-5" src="{{ asset('img/instagram.svg') }}" alt="instagram icon">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img class="w-5 h-5" src="{{ asset('img/facebook.svg') }}" alt="facebook icon">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img class="w-5 h-5" src="{{ asset('img/twitter.svg') }}" alt="twitter icon">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img class="w-5 h-5" src="{{ asset('img/instagram.svg') }}" alt="instagram icon">
+                        </a>
                     </div>
                 </div>
             </div>

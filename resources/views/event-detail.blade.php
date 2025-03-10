@@ -60,6 +60,7 @@
         </div>
         <div class="container max-w-7xl px-6 mx-auto pb-6 lg:py-6 space-y-8 ">
             <div class="lg:flex gap-16 pt-8 border-t border-gray100 mt-8 md:mt-0 md:border-0">
+                {{-- inline ticket/start --}}
                 <div class="w-full">
                     <!-- Desktop Table -->
                     <div class="hidden md:block">
@@ -77,8 +78,19 @@
                                 <tr class="py-4">
                                     <td class="p-4">
                                         <div class="font-semibold text-base text-primaryDark">General Admission</div>
-                                        <p class="text-neutral text-base">Ticket description 1 line show, overflow use</p>
-                                        <a href="#" class="text-blue-link text-base hover:underline">More Info</a>
+                                        <div x-data="{ showMore: false, isOverflowing: false }" x-init="$nextTick(() => isOverflowing = $refs.textContainer.scrollHeight > $refs.textContainer.clientHeight)">
+                                            <p class="text-neutral text-base text-container" x-ref="textContainer"
+                                                :class="{ 'line-clamp-1': !showMore }">
+                                                description. Clicking More Info displays the full ticket description.
+                                                Clicking More Info displays the full ticket description. Clicking More Info
+                                                displays the full ticket description.'"
+                                            </p>
+                                            <a href="#" x-show="isOverflowing && !showMore"
+                                                @click.prevent="showMore = true"
+                                                class="text-blue-link text-base hover:underline">More Info</a>
+                                            <a href="#" x-show="showMore" @click.prevent="showMore = false"
+                                                class="text-blue-link text-base hover:underline">Less Info</a>
+                                        </div>
                                     </td>
                                     <td class="p-4 text-right text-primaryDark">$69.99</td>
                                     <td class="p-4 text-right">
@@ -130,14 +142,24 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="p-2.5 pb-4 pt-2 space-y-1">
+                            <div class="p-2.5 pb-4 pt-2 space-y-1" x-data="{ showMore: false, isOverflowing: false }" x-init="$nextTick(() => isOverflowing = $refs.textContainer.scrollHeight > $refs.textContainer.clientHeight)">
                                 <div class="text-primaryDark text-base font-semibold">$69.99</div>
-                                <p class="text-gray200 text-base">Ticket description 1 line show, overflow use</p>
-                                <a href="#" class="text-blue-link text-base block">More Info</a>
+                                <p class="text-gray200 text-base" x-ref="textContainer"
+                                    :class="{ 'line-clamp-1': !showMore }">
+                                    Ticket description 1 line show, overflow use. Ticket description 1 line show, overflow
+                                    use. Ticket description 1 line show, overflow use.
+                                </p>
+                                <a href="#" x-show="isOverflowing && !showMore" @click.prevent="showMore = true"
+                                    class="text-blue-link text-base block hover:underline">More Info</a>
+                                <a href="#" x-show="showMore" @click.prevent="showMore = false"
+                                    class="text-blue-link text-base block hover:underline">Less Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {{-- inline ticket/end --}}
+
+                {{-- inline group ticket/start --}}
                 {{-- <div class="w-full">
                     <!-- Desktop Table -->
                     <div class="hidden md:block space-y-2">
@@ -170,11 +192,19 @@
                                     </td>
                                 </tr>
                                 <tr x-show="open">
-                                    <td class="p-4">
+                                    <td class="p-4" x-data="{ showMore: false, isOverflowing: false }" x-init="$nextTick(() => isOverflowing = $refs.textContainer.scrollHeight > $refs.textContainer.clientHeight)">
                                         <div class="font-semibold text-base text-black">Ticket Name</div>
-                                        <p class="text-gray-500 text-base">Ticket description 1 line show, overflow
-                                            use</p>
-                                        <a href="#" class="text-blue-link text-base hover:underline">More Info</a>
+                                        <p class="text-gray-500 text-base" x-ref="textContainer"
+                                            :class="{ 'line-clamp-1': !showMore }">
+                                            Ticket description 1 line show, overflow use. Ticket description 1 line show,
+                                            overflow use. Ticket description 1 line show, overflow use.
+                                        </p>
+                                        <a href="#" x-show="isOverflowing && !showMore"
+                                            @click.prevent="showMore = true"
+                                            class="text-blue-link text-base hover:underline">More Info</a>
+
+                                        <a href="#" x-show="showMore" @click.prevent="showMore = false"
+                                            class="text-blue-link text-base hover:underline">Less Info</a>
                                     </td>
                                     <td class="p-4 text-right text-black text-base">$69.99</td>
                                     <td class="p-4 text-right">
@@ -200,8 +230,6 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
-                        <table class="w-full border-collapse">
                             <tbody x-data="{ open: true }">
                                 <tr @click="open = !open" class="cursor-pointer">
                                     <td colspan="3"
@@ -224,10 +252,19 @@
                                     </td>
                                 </tr>
                                 <tr x-show="open">
-                                    <td class="p-4 text-base">
+                                    <td class="p-4" x-data="{ showMore: false, isOverflowing: false }" x-init="$nextTick(() => isOverflowing = $refs.textContainer.scrollHeight > $refs.textContainer.clientHeight)">
                                         <div class="font-semibold text-base text-black">Ticket Name</div>
-                                        <p class="text-gray-500 text-base">Ticket description 1 line show, overflow use</p>
-                                        <a href="#" class="text-blue-link text-base hover:underline">More Info</a>
+                                        <p class="text-gray-500 text-base" x-ref="textContainer"
+                                            :class="{ 'line-clamp-1': !showMore }">
+                                            Ticket description 1 line show, overflow use. Ticket description 1 line show,
+                                            overflow use. Ticket description 1 line show, overflow use.
+                                        </p>
+                                        <a href="#" x-show="isOverflowing && !showMore"
+                                            @click.prevent="showMore = true"
+                                            class="text-blue-link text-base hover:underline">More Info</a>
+
+                                        <a href="#" x-show="showMore" @click.prevent="showMore = false"
+                                            class="text-blue-link text-base hover:underline">Less Info</a>
                                     </td>
                                     <td class="p-4 text-right text-base text-black">$69.99</td>
                                     <td class="p-4 text-right">
@@ -358,47 +395,55 @@
                         </div>
                     </div>
                 </div> --}}
+                {{-- inline group ticket/end --}}
                 <!-- Sidebar (Selected Tickets) -->
-                <div class="max-w-[384px] w-full hidden lg:block">
-                    <h2 class="text-xl font-semibold mb-4">Selected Tickets</h2>
-                    <div class="space-y-4 border-b border-gray100 pb-4">
-                        <div class="flex justify-between text-base text-neutral">
-                            <span>Table 1</span>
-                            <div><span>1</span> x <span> $69.99</span></div>
-                        </div>
+                <div class="max-w-[384px] w-full hidden lg:block space-y-4">
+                    <h2 class="text-xl font-semibold">Selected Tickets</h2>
+                    <div class="text-base">
+                        <span class="uppercase block">NO TICKETS SELECTED</span>
+                        Please select tickets to begin your order
                     </div>
-                    <div class="flex justify-between text-base font-semibold py-4 border-b border-gray100">
-                        <span>SUBTOTAL</span>
-                        <span>$69.99</span>
-                    </div>
-                    <div class="text-base text-neutral100 border-b border-gray100 py-4">
-                        <div class="flex justify-between">
-                            <span>Internet Handling</span>
-                            <span>$2.00</span>
+                    <div>
+                        <div class="space-y-4 border-b border-gray100 pb-4">
+                            <div class="flex justify-between text-base text-neutral">
+                                <span>Table 1</span>
+                                <div><span>1</span> x <span> $69.99</span></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span>Payment Gateway</span>
-                            <span>$2.00</span>
+                        <div class="flex justify-between text-base font-semibold py-4 border-b border-gray100">
+                            <span>SUBTOTAL</span>
+                            <span>$69.99</span>
                         </div>
-                        <div class="flex justify-between">
-                            <div>Tax Amount <span>(8.25%)</span></div>
-                            <span>$5.00</span>
+                        <div class="text-base text-neutral100 border-b border-gray100 py-4">
+                            <div class="flex justify-between">
+                                <span>Internet Handling</span>
+                                <span>$2.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Payment Gateway</span>
+                                <span>$2.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <div>Tax Amount <span>(8.25%)</span></div>
+                                <span>$5.00</span>
+                            </div>
                         </div>
+                        <div class="flex justify-between font-bold text-xl py-4">
+                            <span>TOTAL</span>
+                            <span>$78.99</span>
+                        </div>
+                        <button
+                            class="w-full bg-primaryDark text-danger300 text-xl font-semibold gap-2 flex justify-center items-center p-2.5 rounded-md">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.666992 1.14783H3.33366L5.12033 10.0745C5.18129 10.3814 5.34826 10.6571 5.59202 10.8534C5.83578 11.0496 6.14079 11.1538 6.45366 11.1478H12.9337C13.2465 11.1538 13.5515 11.0496 13.7953 10.8534C14.0391 10.6571 14.206 10.3814 14.267 10.0745L15.3337 4.48116H4.00033M6.66699 14.4812C6.66699 14.8494 6.36852 15.1478 6.00033 15.1478C5.63214 15.1478 5.33366 14.8494 5.33366 14.4812C5.33366 14.113 5.63214 13.8145 6.00033 13.8145C6.36852 13.8145 6.66699 14.113 6.66699 14.4812ZM14.0003 14.4812C14.0003 14.8494 13.7018 15.1478 13.3337 15.1478C12.9655 15.1478 12.667 14.8494 12.667 14.4812C12.667 14.113 12.9655 13.8145 13.3337 13.8145C13.7018 13.8145 14.0003 14.113 14.0003 14.4812Z"
+                                    stroke="#FEE9E7" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            {{ __('checkout') }}
+                        </button>
                     </div>
-                    <div class="flex justify-between font-bold text-xl py-4">
-                        <span>TOTAL</span>
-                        <span>$78.99</span>
-                    </div>
-                    <button
-                        class="w-full bg-primaryDark text-danger300 text-xl font-semibold gap-2 flex justify-center items-center p-2.5 rounded-md">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M0.666992 1.14783H3.33366L5.12033 10.0745C5.18129 10.3814 5.34826 10.6571 5.59202 10.8534C5.83578 11.0496 6.14079 11.1538 6.45366 11.1478H12.9337C13.2465 11.1538 13.5515 11.0496 13.7953 10.8534C14.0391 10.6571 14.206 10.3814 14.267 10.0745L15.3337 4.48116H4.00033M6.66699 14.4812C6.66699 14.8494 6.36852 15.1478 6.00033 15.1478C5.63214 15.1478 5.33366 14.8494 5.33366 14.4812C5.33366 14.113 5.63214 13.8145 6.00033 13.8145C6.36852 13.8145 6.66699 14.113 6.66699 14.4812ZM14.0003 14.4812C14.0003 14.8494 13.7018 15.1478 13.3337 15.1478C12.9655 15.1478 12.667 14.8494 12.667 14.4812C12.667 14.113 12.9655 13.8145 13.3337 13.8145C13.7018 13.8145 14.0003 14.113 14.0003 14.4812Z"
-                                stroke="#FEE9E7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        {{ __('checkout') }}
-                    </button>
                 </div>
                 <div x-data="{ open: false }"
                     class="fixed rounded-t-2xl border-t overflow-hidden border-gray100 z-20 bottom-0 left-0 w-full lg:hidden">
@@ -587,9 +632,15 @@
                                     <a href="tel:+11231231234">(123) 123-1234</a>
                                 </div>
                                 <div class="flex gap-4 w-full">
-                                    <img class="w-5 h-5" src="{{ asset('img/facebook.svg') }}" alt="facebook icon">
-                                    <img class="w-5 h-5" src="{{ asset('img/twitter.svg') }}" alt="twitter icon">
-                                    <img class="w-5 h-5" src="{{ asset('img/instagram.svg') }}" alt="instagram icon">
+                                    <a href="https://www.facebook.com" target="_blank">
+                                        <img class="w-5 h-5" src="{{ asset('img/facebook.svg') }}" alt="facebook icon">
+                                    </a>
+                                    <a href="https://www.twitter.com" target="_blank">
+                                        <img class="w-5 h-5" src="{{ asset('img/twitter.svg') }}" alt="twitter icon">
+                                    </a>
+                                    <a href="https://www.instagram.com" target="_blank">
+                                        <img class="w-5 h-5" src="{{ asset('img/instagram.svg') }}" alt="instagram icon">
+                                    </a>
                                 </div>
                             </div>
                         </div>

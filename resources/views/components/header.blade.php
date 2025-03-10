@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <header x-data="{ show: false, showDP: false, location: window.location.pathname }" class="lg:flex justify-between items-center z-50 relativ py-3 lg:py-4 ">
             <div class="flex justify-between items-center w-full lg:w-auto lg:gap-8">
-                <a wire:navigate href="#">
+                <a wire:navigate href="/">
                     <img src="{{ asset('img/logo-white-red.svg') }}" alt="Event Mania"
                         class="w-full object-contain h-[40px] max-w-[167px] ">
                 </a>
@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a wire:navigate href="#"
+                        <a wire:navigate href="/about"
                             class="relative cursor-pointer px-1 group font-roboto leading-6 text-base text-white border-transparent whitespace-nowrap hover:font-medium">
                             @lang('aboutUs')
                             <span
@@ -261,7 +261,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-primary-800 ring-1 ring-gray-800 ring-opacity-5 focus:outline-none z-10"
+                            <div class="origin-top-right absolute z-20 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-primary-800 ring-1 ring-gray-800 ring-opacity-5 focus:outline-none"
                                 @click.away="showDP = false" role="menu" aria-orientation="vertical"
                                 aria-labelledby="user-menu-button" tabindex="-1" x-show="showDP" x-cloak
                                 style="display: none">
